@@ -1,0 +1,29 @@
+<div class="title">
+  {{dataAdvert.title}}
+  <div *ngIf="editable">
+    <i disabled class="mdi mdi-pencil-outline mdi-btn" title="Изменить 'В разработке :-('"></i>
+    <i class="mdi mdi-delete-forever-outline mdi-btn" title="Удалить" (click)="removeAction(dataAdvert.objectId)"></i>
+  </div>
+</div>
+
+<div>
+  <span class="headline">Категория:</span>{{dataAdvert.category}}
+</div>
+
+<div *ngIf="editable" style="word-wrap: break-word;" >
+  <span class="headline">Описание:</span>{{dataAdvert.description}}
+</div>
+
+<div>
+  <div><strong>Создано:</strong>{{dataAdvert.created | date}}</div>
+  <div *ngIf="dataAdvert.updated"><strong>Обновлено:</strong>{{dataAdvert.updated | date}}</div>
+</div>
+
+<div class="price-container">
+  <div class="price">{{dataAdvert.price}} р.</div>
+  <a class="more-info" (click)="toAdvertDetails()">подробнее</a>
+  <div class="view"  *ngIf="!editable">
+    <i class="mdi mdi-eye"></i>
+    <label>{{dataAdvert?.count}}</label>
+  </div>
+</div>

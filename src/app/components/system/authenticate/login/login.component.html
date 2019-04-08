@@ -1,0 +1,39 @@
+<app-breadcrumb-pagination></app-breadcrumb-pagination>
+
+<div class="container">
+
+  <img class="logo" src="../../../assets/img/LOGO.png">
+  <h2>Добро пожаловать!</h2>
+
+  <div class="group">
+    <div class="input-label">Логин или Почта</div>
+    <input class="default"
+           type="text"
+           [formControl]="loginControl"
+           [ngClass]="loginControl.invalid && loginControl.touched ? 'has-error' : ''">
+    <i class="mdi mdi-information info"
+       *ngIf="loginControl.touched && loginControl.invalid"
+       title="Логин или почта не может быть пустым."></i>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Пароль</div>
+    <input class="default"
+           type="password"
+           [formControl]="passwordControl"
+           [ngClass]="passwordControl.invalid && passwordControl.touched ? 'has-error' : ''">
+    <i class="mdi mdi-information info"
+       *ngIf="passwordControl.invalid && passwordControl.touched"
+       title="{{ passwordControl.getError('messageKey')}}"></i>
+  </div>
+
+  <div class="button-container">
+    <button type="button"
+            class="active-btn"
+            [ngClass]="loginControl.invalid ? 'disabled' : ''"
+            (click)="login()">Войти
+    </button>
+  </div>
+
+</div>
+

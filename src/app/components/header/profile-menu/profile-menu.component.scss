@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+
+  div.profile-menu {
+    background: #438dd8;
+    color: white;
+    width: 200px;
+    top: 75px;
+    right: 30px;
+    position: absolute;
+    z-index: 9999;
+    padding: 10px 0;
+    border-radius: 1em;
+
+    > div.user-info {
+      text-align: center;
+      padding: 10px;
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+
+    > div.menu-item {
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &:hover {
+        background: greenyellow;
+        color: grey;
+      }
+    }
+  }
+}
+

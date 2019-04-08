@@ -1,0 +1,9 @@
+<h3 mat-dialog-title class="title-text">{{data.title}}</h3>
+<mat-dialog-content>
+  <label class="description-text">{{data.text}}</label>
+</mat-dialog-content>
+<mat-dialog-actions class="btn-container" align="end">
+  <button *ngFor="let btn of data.buttons"
+          [ngClass]="btn.action ? 'btn-active' : 'btn-pos'"
+          [mat-dialog-close]="btn.action">{{btn.label}}</button>
+</mat-dialog-actions>

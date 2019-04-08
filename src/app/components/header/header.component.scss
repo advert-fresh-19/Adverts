@@ -1,0 +1,54 @@
+@import "../../../styles/app/color";
+
+:host {
+  flex: 0 0 100px;
+  background: $blue2;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  > div.logo-container {
+    display: flex;
+    cursor: pointer;
+    margin-left: 50px;
+    align-items: center;
+
+    > img {
+      width: auto;
+      height: 75px;
+    }
+
+    > div.text-logo {
+      position: relative;
+      margin-bottom: 25px;
+
+      > label {
+        font-size: 2em;
+        font-family: cursive;
+        pointer-events: none;
+
+        &.advert {
+          color: white;
+        }
+
+        &.fresh {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          color: $greenyellow;
+        }
+      }
+    }
+  }
+
+  > div.menu-container {
+      position: absolute;
+      bottom: -5px;
+      left: calc(30%);
+  }
+
+  > div.auth-container {
+    margin: 20px 50px 0 auto;
+    height: 100%;
+  }
+}

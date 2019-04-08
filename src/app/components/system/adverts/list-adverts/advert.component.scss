@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  > div.search-panel {
+    flex: 0 0 70px;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-left: 30px;
+
+    > div.search-container {
+      position: relative;
+
+      > input.search-input {
+        border-radius: 20px;
+        width: 300px;
+        height: 40px;
+        padding: 0 20px;
+      }
+
+      > i {
+        position: absolute;
+        right: 25px;
+        transform: translateY(50%);
+      }
+    }
+  }
+
+  > div.container {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+
+    > div.test-container {
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-gap: 35px;
+    }
+
+    > div.paginator-container {
+      flex: 0 0 50px;
+      height: 60px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+div.test-container {
+    width: auto!important;
+  }
+}

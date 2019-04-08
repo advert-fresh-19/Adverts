@@ -1,0 +1,55 @@
+<div class="container" [formGroup]="form">
+
+  <h4 style="color: greenyellow; font-size: 2rem;">
+    Подать объявление
+  </h4>
+
+  <div class="group">
+    <div class="input-label">Заглавие</div>
+    <input class="default"
+           formControlName="title"
+           [ngClass]="checkedControlValidations('title') ? 'has-error' : ''"
+           inputRestricter="^[A-Za-zА-Яа-я0-9\s\.-]*$">
+    <span class="error" *ngIf="!!checkedControlValidations('title')">
+      {{form.get('title')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Категория</div>
+    <input class="default"
+           formControlName="category"
+           [ngClass]="checkedControlValidations('category') ? 'has-error' : ''"
+           inputRestricter="^[A-Za-zА-Яа-я0-9\s\.-]*$">
+    <span class="error" *ngIf="!!checkedControlValidations('category')">
+      {{form.get('category')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Описание</div>
+    <input class="default"
+           formControlName="description"
+           [ngClass]="checkedControlValidations('description') ? 'has-error' : ''"
+           inputRestricter="^[A-Za-zА-Яа-я0-9\s\.-]*$">
+    <span class="error" *ngIf="!!checkedControlValidations('description')">
+      {{form.get('description')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Цена</div>
+    <input class="default"
+           formControlName="price"
+           [ngClass]="checkedControlValidations('price') ? 'has-error' : ''"
+           inputRestricter="^[0-9]*$">
+    <span class="error" *ngIf="!!checkedControlValidations('price')">
+      {{form.get('price')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="bottom-container" (click)="createAdvert()">
+    <button class="active-btn">Подать объявлениe</button>
+  </div>
+
+</div>

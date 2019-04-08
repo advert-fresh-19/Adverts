@@ -1,0 +1,32 @@
+@import "../node_modules/material-design-icons/iconfont/material-icons.css";
+@import "../src/styles/main";
+
+html, body {
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+* {
+  box-sizing: border-box;
+  outline: none;
+  user-select: none;
+}
+
+.ngx-pagination {
+  margin-left: 50%!important;
+  transform: translateX(-50%);
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@media screen and (min-width: 1600px) {
+  body {
+    overflow-y: auto!important;
+  }
+}

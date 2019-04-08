@@ -1,0 +1,5 @@
+<ul>
+  <li><a routerLinkActive="active" [routerLink]="['/adverts']"> Объявления </a></li>
+  <li><a routerLinkActive="active" [routerLink]="['/new-advert']" *ngIf="isLoggedUser"> Подать объявления </a></li>
+  <li><a routerLinkActive="active" [routerLink]="['/users']"> Пользователи </a></li>
+</ul>

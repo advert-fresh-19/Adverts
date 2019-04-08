@@ -1,0 +1,122 @@
+<app-breadcrumb-pagination *ngIf="!isChangeProfile"></app-breadcrumb-pagination>
+
+<form [formGroup]="form" class="container">
+
+  <div class="group center">
+    <label class="header-text">
+      {{isChangeProfile ? 'Мои данные' : 'Регистрация'}}</label>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Логин</div>
+    <input class="default"
+           type="text"
+           readonly
+           onfocus="this.removeAttribute('readonly')"
+           placeholder="Например: Lyavon"
+           [ngClass]="checkedControlValidations('login') ? 'has-error' : ''"
+           formControlName="login">
+    <span class="error" *ngIf="form.get('login').touched  && form.get('login').getError('forbiddenLogin')">
+      Данный логин занят.
+    </span>
+    <span class="error" *ngIf="checkedControlValidations('login')">
+      {{form.get('login')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Имя</div>
+    <input class="default"
+           type="text"
+           readonly
+           onfocus="this.removeAttribute('readonly')"
+           placeholder="Например: Иван"
+           [ngClass]="checkedControlValidations('firstName') ? 'has-error' : ''"
+           formControlName="firstName">
+    <span class="error" *ngIf="checkedControlValidations('firstName')">
+      {{form.get('firstName')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Фамилия</div>
+    <input class="default"
+           type="text"
+           readonly
+           onfocus="this.removeAttribute('readonly')"
+           placeholder="Например: Иванов"
+           [ngClass]="checkedControlValidations('lastName') ? 'has-error' : ''"
+           formControlName="lastName">
+    <span class="error" *ngIf="checkedControlValidations('lastName')">
+       {{form.get('lastName')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">email</div>
+    <input class="default"
+           id="email"
+           type="email"
+           readonly
+           onfocus="this.removeAttribute('readonly')"
+           placeholder="Например: ivanov.ivan@gmail.com"
+           [ngClass]="checkedControlValidations('email') ? 'has-error' : ''"
+           formControlName="email">
+    <span class="error" *ngIf="checkedControlValidations('email')">
+        {{form.get('email')?.errors.messageKey}}
+    </span>
+    <span class="error" *ngIf="form.get('email').touched  && form.get('email').getError('email')">
+      Email не соответствует стандарту.
+    </span>
+    <span class="error" *ngIf="form.get('email').touched  && form.get('email').getError('forbiddenEmail')">
+      Данный email адрес занят.
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Телефон</div>
+    <input class="default"
+           type="text"
+           readonly
+           onfocus="this.removeAttribute('readonly')"
+           placeholder="Формат: +37529-2XX-XX-XX"
+           [ngClass]="checkedControlValidations('phone') ? 'has-error' : ''"
+           formControlName="phone">
+    <span class="error" *ngIf="checkedControlValidations('phone')">
+     {{form.get('phone')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Пароль</div>
+    <input class="default"
+           type="password"
+           readonly
+           onfocus="this.removeAttribute('readonly')"
+           placeholder="Должен содержать не менее 6 символов"
+           [ngClass]="checkedControlValidations('password') ? 'has-error' : ''"
+           formControlName="password">
+    <span class="error" *ngIf="checkedControlValidations('password')">
+      {{form.get('password')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="group">
+    <div class="input-label">Подтвердить пароль</div>
+    <input class="default"
+           type="password"
+           readonly
+           onfocus="this.removeAttribute('readonly')"
+           placeholder="Должен содержать не менее 6 символов"
+           [ngClass]="checkedControlValidations('confirmPassword') ? 'has-error' : ''"
+           formControlName="confirmPassword">
+    <span class="error" *ngIf="checkedControlValidations('confirmPassword')">
+      {{form.get('confirmPassword')?.errors.messageKey}}
+    </span>
+  </div>
+
+  <div class="button-container">
+    <button class="active-btn" (click)="action()">{{isChangeProfile ? 'Сохранить' : 'Регистрация'}}</button>
+  </div>
+
+</form>

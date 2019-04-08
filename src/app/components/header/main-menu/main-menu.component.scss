@@ -1,0 +1,32 @@
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  > li {
+    display: block;
+
+    > a {
+      font-size: 1.5rem;
+      cursor: pointer;
+      border: none;
+      border-bottom: 5px solid transparent;
+      margin-right: 30px;
+      padding-bottom: 5px;
+      color: white;
+      user-select: none;
+      text-decoration: none;
+      display: flex;
+
+      &:hover {
+        transition: all .2s ease-in-out;
+        border-bottom: 5px solid greenyellow;
+      }
+
+      &.active {
+        transition: all .2s ease-in-out;
+        border-bottom: 5px solid greenyellow;
+      }
+    }
+  }
+}

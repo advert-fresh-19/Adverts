@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="test-container">
+    <app-advart
+      *ngFor="let advert of advertsList| paginate: { itemsPerPage: itemsPerPage, currentPage: defaultPage}"
+      [dataAdvert]="advert">
+    </app-advart>
+  </div>
+</div>
+
+<div class="paginator-container">
+  <pagination-controls (pageChange)="defaultPage = $event" style="width: 100%;"></pagination-controls>
+</div>

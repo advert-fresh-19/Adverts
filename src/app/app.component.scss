@@ -1,0 +1,22 @@
+@import "../styles/app/_color";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > div.main {
+    display: flex;
+    flex:1;
+    background-color: #eaebef;
+  }
+
+  > footer {
+    display: flex;
+    flex: 0 0 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: $black;
+    color: $white;
+  }
+}

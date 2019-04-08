@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: flex-start;
+
+  .item {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    width: 330px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    > label {
+      font-size: 1em;
+      color: #5276cf;
+      font-style: italic;
+    }
+
+    > div.avatar {
+      background: grey;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 5em;
+    }
+  }
+}

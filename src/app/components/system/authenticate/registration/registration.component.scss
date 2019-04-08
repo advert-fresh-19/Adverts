@@ -1,0 +1,100 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background-size: auto 376px;
+
+  >
+  form.container {
+    padding: 30px;
+    height: 500px;
+    width: 750px;
+    background: white;
+    border: 2px solid grey;
+    border-radius: 5%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    div.group {
+      width: 320px;
+      height: 52px;
+      position: relative;
+
+      > div.custom-placeholder {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        background: white;
+        padding: 0 5px;
+        color: #5276cf;
+      }
+
+      > input.default {
+        outline: none;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #5276cf;
+        border-radius: 5px;
+        padding: 0 20px;
+
+        &.has-error {
+          border: 2px solid red !important;
+          color: red;
+        }
+
+        &:focus {
+          border: 2px solid #5276cf;
+        }
+
+      }
+    }
+
+    > div.button-container {
+      justify-content: flex-end;
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+:focus::-webkit-input-placeholder {
+  color: transparent
+}
+
+:focus::-moz-placeholder {
+  color: transparent
+}
+
+:focus:-moz-placeholder {
+  color: transparent
+}
+
+:focus:-ms-input-placeholder {
+  color: transparent
+}
+
+.group {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+span.error {
+  color: red;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-text {
+  padding-bottom: 20px;
+  color: greenyellow;
+  font-size: 40px;
+}

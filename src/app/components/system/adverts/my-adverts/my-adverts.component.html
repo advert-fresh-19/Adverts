@@ -1,0 +1,9 @@
+  <div class="container">
+    <app-advart
+      (removeAdvert)="remove($event)"
+      *ngFor="let advert of myAdvertsList| paginate: { itemsPerPage: itemsPerPage, currentPage: defaultPage}"
+      [editable]="true"
+      [dataAdvert]="advert">
+    </app-advart>
+  </div>
+

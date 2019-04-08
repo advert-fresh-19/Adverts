@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h3>Объявление:</h3>
+    <div class="item title"> {{selectAdvert?.title}}</div>
+    <div class="item title"> {{selectAdvert?.category}}</div>
+    <div class="item"> {{selectAdvert?.description}}</div >
+    <div class="item"> Дата создания: {{selectAdvert?.created | date }} </div>
+    <div class="item"> Дата последнего изменения:
+      {{  selectAdvert?.updated ? (selectAdvert?.updated | date) : selectAdvert?.created | date}}
+    </div>
+    <div class="item"> Цена: {{selectAdvert?.price}} р.</div>
+
+  <h3>Автор:</h3>
+    <div> {{advertCreator?.firstname}}  {{advertCreator?.lastname}} </div>
+    <div> телефон: {{advertCreator?.phone}}</div>
+    <div>email: {{advertCreator?.email}}</div>
+
+</div>

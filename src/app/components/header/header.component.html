@@ -1,0 +1,19 @@
+<div [routerLink]="['/adverts']" class="logo-container">
+  <img src="../../../assets/img/LOGO.png">
+  <div class="text-logo">
+    <label class="advert">Adverts</label>
+    <label class="fresh">Fresh</label>
+  </div>
+</div>
+
+<div class="menu-container">
+  <app-main-menu [isLoggedUser]="isLoggedUser"></app-main-menu>
+</div>
+
+<div class="auth-container">
+  <app-profile-menu [userName]="userName" [isLoggedUser]="isLoggedUser"></app-profile-menu>
+</div>
+
+
+
+

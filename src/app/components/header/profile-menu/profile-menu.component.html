@@ -1,0 +1,17 @@
+<div *ngIf="!isLoggedUser" class="auth-btn" [routerLink]="['/signup']">
+  <i class="mdi mdi-account-key"></i>
+</div>
+<div *ngIf="!isLoggedUser" class="auth-btn" [routerLink]="['/signin']">
+  <i class="mdi mdi-login"></i>
+</div>
+<div #profileBtn class="auth-btn profile" *ngIf="isLoggedUser" (click)="openProfileMenu()">
+  <i class="mdi mdi-account"></i>
+</div>
+
+<div *ngIf="isOpenProfileMenu" class="profile-menu">
+  <div disabled class="user-info">{{userName}}</div>
+  <div class="menu-item" [routerLink]="['/profile']"><i class="mdi mdi-account-edit"></i>  Мои данные</div>
+  <div class="menu-item" [routerLink]="['/my-adverts']"><i class="mdi mdi-format-list-checkbox"></i>  Мои объявления</div>
+  <div class="menu-item" (click)="logout()"><i class="mdi mdi-logout"></i>  Выйти</div>
+  <div class="menu-item" (click)="deleteAccount()"><i class="mdi mdi-delete"></i>  Удалить аккаунт</div>
+</div>
